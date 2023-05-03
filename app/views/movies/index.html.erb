@@ -1,0 +1,22 @@
+<h1>Films Catalog</h1>
+<div class="container pt-3 pb-1" style="background-color: blue; border-radius: 10px">
+<table class="table table-striped table-bordered mt-3">
+  <tr>
+    <th>Film Id</th>
+    <th>Film Name</th>
+    <th>Film Year</th>
+    <th>Film Info</th>
+  </tr>
+  <% @movies.each do |movie| %>
+    <tr>
+      <td> <%= movie.id %> </td>
+      <td> <%= movie.name %> </td>
+      <td> <%= movie.year %> </td>
+      <td> <%= link_to('Open', movie_path(movie)) %> </td>
+    </tr>
+  <% end %>
+</table>
+</div>
+
+
+<%== pagy_nav(@pagy) %>
